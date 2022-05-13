@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Listagem</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+</head>
+<body>
+<nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+        <img src="https://img2.gratispng.com/20180518/aek/kisspng-house-home-inspection-roof-home-improvement-5afeb06b96ca76.3651402315266407476177.jpg"
+             width="112" height="28">
+        </a>
+
+    </div>
+
+    <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-start">
+            <a class="navbar-item" href="/">
+                Home
+            </a>
+            <a class="navbar-item" href="/cadastrar">
+                Cadastrar
+            </a>
+
+            <a class="navbar-item" href="/listar">
+                Listar
+            </a>
+
+        </div>
+    </div>
+
+    <div class="navbar-end">
+        <div class="navbar-item">
+            <div class="buttons">
+                <a class="button is-link is-light" href="/logout">
+                    <strong>Logout</strong>
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>
+<section class="hero is-fullheight-with-navbar is-link">
+    <div class="hero-head" align="center">
+        <br>
+        <h1 class="title is-size-1 is-uppercase">
+            Listagem
+        </h1>
+        <br>
+
+        <form action={{url_for('listar')}} class="container" method="GET">
+            <input type="search" name="termo" placeholder="Digite aqui sua busca" class="form-control">
+            <br>
+            <br>
+            <button type="submit" class="btn btn-success">Buscar</button>
+            <br>
+            <br>
+        </form>
+        <table id="custom-table" class="table is-bordered is-striped is-narrow is-hoverable">
+            <thead align="center">
+            <tr>
+                <th>Endereço</th>
+                <th>Estado</th>
+                <th>Preço</th>
+
+
+            </tr>
+            </thead>
+            <tbody align="left">
+            {% for e in imoveis %}
+            <tr>
+                <td>{{e.endereço}}</td>
+                <td>{{e.estado}}</td>
+                <td>R$ {{e.preço}}</td>
+                <td>
+                    <form action="/delete/{{e.id}}" method="GET">
+                        <button class="button is-danger">Deletar</button>
+                    </form>
+                </td>
+                <td>
+                    <form action="/edit/{{e.id}}" method="GET">
+                        <button class="button is-link" hred="/edit/{{e.id}}">Editar</button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+            </tbody>
+
+        </table>
+    </div>
+</section>
+</body>
+</html>

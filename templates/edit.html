@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Editar</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+
+</head>
+<body>
+<nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+        <img src="https://img2.gratispng.com/20180518/aek/kisspng-house-home-inspection-roof-home-improvement-5afeb06b96ca76.3651402315266407476177.jpg"
+             width="112" height="28">
+
+    </div>
+
+    <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-start">
+            <a class="navbar-item" href="/">
+                Home
+            </a>
+            <a class="navbar-item" href="/cadastrar">
+                Cadastrar
+            </a>
+
+            <a class="navbar-item" href="/listar">
+                Listar
+            </a>
+
+        </div>
+    </div>
+
+    <div class="navbar-end">
+        <div class="navbar-item">
+            <div class="buttons">
+                <a class="button is-link is-light" href="/logout">
+                    <strong>Logout</strong>
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>
+<section class="hero is-fullheight-with-navbar is-link">
+    <div class="hero-head" align="center">
+        <br>
+        <h1 class="title is-size-1 is-uppercase" id="Titulo">
+            Editar
+        </h1>
+    </div>
+    <form action="/edit/{{ imoveis.id }}" class="container" method="POST">
+        <div class="hero-body is-size-4">
+            <div class="container has-text-centered ">
+                <p>Endereço:
+                    <br>
+                    <input type="text" id="endereço" name="endereço" placeholder="Digite o endereço"
+                           class="form-control" value="{{ imoveis.endereço }}">
+                </p>
+                <p>Estado:
+                    <br>
+                    <input type="text" id="estado" name="estado" placeholder="Digite o estado" class="form-control"
+                           value="{{ imoveis.estado }}">
+                </p>
+                <p>Preço:
+                    <br>
+                    <input type="text" id="preço" name="preço" placeholder="Digite o valor" class="form-control"
+                           value="{{ imoveis.preço }}">
+                </p>
+                <br>
+                <button type="submit" class="button is-primary-is-light">Editar</button>
+    </form>
+
+    <a href="url_for(listar)">
+        <button type="text" class="button is-danger-is-light">Cancelar</button>
+    </a>
+    </div>
+    </div>
+    <br>
+    <br>
+</section>
+</body>
+</html>

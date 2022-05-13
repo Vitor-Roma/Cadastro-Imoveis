@@ -1,0 +1,19 @@
+version: '3.7'
+services:
+  db:
+    image: mysql
+    command: --default-authentication-plugin=mysql_native_password
+    container_name: 'db'
+    restart: always
+    environment:
+      MYSQL_USER: 'root'
+      MYSQL_DATABASE: 'imoveis'
+      MYSQL_ROOT_PASSWORD: '123'
+    ports:
+      - "3310:3306"
+  adminer:
+    image: adminer:4
+    container_name: 'adminer_container'
+    restart: always
+    ports:
+      - '8080:8080'
