@@ -1,4 +1,4 @@
-# Para que serve:
+# Funcionalidades
 Um site para cadastrar imóveis com MYSQL e Docker Compose!
 
 
@@ -22,4 +22,4 @@ pip install -r requirements.txt
 Docker-compose up
 
 
-## Execute o programa (Ctrl + Shift + F10)
+### Execute o programa (Ctrl + Shift + F10)
