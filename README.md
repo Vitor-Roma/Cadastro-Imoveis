@@ -10,10 +10,10 @@ Um site para cadastrar imóveis com MYSQL e Docker Compose!
 
 # Como usar:
 
-##Abra o terminal e siga o passo a passo abaixo.
+## Abra o terminal e siga o passo a passo abaixo.
 
 * Instalar as libs com o comando:
-'''
+'''bash
 pip install -r requirements.txt
 '''
 
@@ -22,4 +22,4 @@ pip install -r requirements.txt
 Docker-compose up
 '''
 
-##Execute o programa (Ctrl + Shift + F10)
+## Execute o programa (Ctrl + Shift + F10)
